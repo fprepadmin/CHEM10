@@ -1,0 +1,206 @@
+[
+  {
+    "id": "chuong-1",
+    "title": "Chương 1: Cấu tạo nguyên tử",
+    "description": "Thành phần nguyên tử, hạt nhân, vỏ electron, đồng vị, cấu hình electron",
+    "lessons": [
+      {
+        "id": "bai-1",
+        "title": "Bài 1: Thành phần của nguyên tử",
+        "topics": [
+          "Hạt proton, neutron, electron",
+          "Kích thước và khối lượng nguyên tử",
+          "Hạt nhân nguyên tử"
+        ]
+      },
+      {
+        "id": "bai-2",
+        "title": "Bài 2: Nguyên tố hóa học",
+        "topics": [
+          "Số hiệu nguyên tử (Z)",
+          "Số khối (A)",
+          "Đồng vị và nguyên tử khối trung bình"
+        ]
+      },
+      {
+        "id": "bai-3",
+        "title": "Bài 3: Cấu trúc vỏ electron nguyên tử",
+        "topics": [
+          "Lớp và phân lớp electron",
+          "Orbital nguyên tử (AO)",
+          "Cấu hình electron nguyên tử"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "chuong-2",
+    "title": "Chương 2: Bảng tuần hoàn các nguyên tố hóa học",
+    "description": "Nguyên tắc sắp xếp, cấu tạo bảng tuần hoàn, quy luật biến đổi tuần hoàn",
+    "lessons": [
+      {
+        "id": "bai-4",
+        "title": "Bài 4: Bảng tuần hoàn nguyên tố hóa học",
+        "topics": [
+          "Ô nguyên tố, Chu kì, Nhóm A/B",
+          "Nguyên tố s, p, d, f"
+        ]
+      },
+      {
+        "id": "bai-5",
+        "title": "Bài 5: Xu hướng biến đổi tính chất trong bảng tuần hoàn",
+        "topics": [
+          "Bán kính nguyên tử",
+          "Độ âm điện",
+          "Tính kim loại, tính phi kim",
+          "Tính acid - base của oxide/hydroxide"
+        ]
+      },
+      {
+        "id": "bai-6",
+        "title": "Bài 6: Định luật tuần hoàn và ý nghĩa của BTH",
+        "topics": [
+          "Định luật tuần hoàn",
+          "Mối liên hệ giữa cấu hình e và vị trí, tính chất"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "chuong-3",
+    "title": "Chương 3: Liên kết hóa học",
+    "description": "Quy tắc octet, liên kết ion, liên kết cộng hóa trị, liên kết hydrogen và van der Waals",
+    "lessons": [
+      {
+        "id": "bai-7",
+        "title": "Bài 7: Quy tắc Octet",
+        "topics": [
+          "Quy tắc bát tử",
+          "Sự tạo thành ion"
+        ]
+      },
+      {
+        "id": "bai-8",
+        "title": "Bài 8: Liên kết ion",
+        "topics": [
+          "Bản chất liên kết ion",
+          "Tinh thể ion và tính chất"
+        ]
+      },
+      {
+        "id": "bai-9",
+        "title": "Bài 9: Liên kết cộng hóa trị",
+        "topics": [
+          "Cặp electron chung",
+          "Công thức Lewis, electron, cấu tạo",
+          "Liên kết đơn, đôi, ba",
+          "Độ phân cực liên kết và phân tử"
+        ]
+      },
+      {
+        "id": "bai-10",
+        "title": "Bài 10: Liên kết hydrogen và tương tác van der Waals",
+        "topics": [
+          "Liên kết hydrogen liên phân tử",
+          "Tương tác van der Waals",
+          "Ảnh hưởng đến nhiệt độ sôi/nóng chảy"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "chuong-4",
+    "title": "Chương 4: Phản ứng oxi hóa - khử",
+    "description": "Số oxi hóa, quá trình oxi hóa khử, cân bằng phản ứng oxi hóa khử",
+    "lessons": [
+      {
+        "id": "bai-11",
+        "title": "Bài 11: Phản ứng oxi hóa - khử và số oxi hóa",
+        "topics": [
+          "Quy tắc xác định số oxi hóa",
+          "Chất khử, chất oxi hóa",
+          "Quá trình khử, quá trình oxi hóa"
+        ]
+      },
+      {
+        "id": "bai-12",
+        "title": "Bài 12: Cân bằng phản ứng oxi hóa - khử",
+        "topics": [
+          "Phương pháp thăng bằng electron",
+          "Ý nghĩa thực tiễn phản ứng oxi hóa khử"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "chuong-5",
+    "title": "Chương 5: Năng lượng hóa học",
+    "description": "Phản ứng tỏa nhiệt, thu nhiệt, enthalpy tạo thành chuẩn, biến thiên enthalpy",
+    "lessons": [
+      {
+        "id": "bai-13",
+        "title": "Bài 13: Phản ứng tỏa nhiệt, thu nhiệt",
+        "topics": [
+          "Biến thiên enthalpy phản ứng (ΔrH°₂₉₈)",
+          "Phản ứng tỏa nhiệt và thu nhiệt"
+        ]
+      },
+      {
+        "id": "bai-14",
+        "title": "Bài 14: Tính biến thiên enthalpy của phản ứng hóa học",
+        "topics": [
+          "Nhiệt tạo thành chuẩn (ΔfH°₂₉₈)",
+          "Năng lượng liên kết (Eb)",
+          "Tính toán theo ΔfH° và Eb"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "chuong-6",
+    "title": "Chương 6: Tốc độ phản ứng hóa học",
+    "description": "Khái niệm tốc độ phản ứng, các yếu tố ảnh hưởng đến tốc độ phản ứng",
+    "lessons": [
+      {
+        "id": "bai-15",
+        "title": "Bài 15: Tốc độ phản ứng hóa học",
+        "topics": [
+          "Khái niệm tốc độ phản ứng",
+          "Tốc độ trung bình"
+        ]
+      },
+      {
+        "id": "bai-16",
+        "title": "Bài 16: Các yếu tố ảnh hưởng đến tốc độ phản ứng",
+        "topics": [
+          "Ảnh hưởng của nồng độ, nhiệt độ, áp suất",
+          "Diện tích tiếp xúc và chất xúc tác"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "chuong-7",
+    "title": "Chương 7: Nguyên tố nhóm Halogen (VIIA)",
+    "description": "Tính chất vật lý, hóa học của Halogen, hợp chất hydrogen halide và hydrohalic acid",
+    "lessons": [
+      {
+        "id": "bai-17",
+        "title": "Bài 17: Tính chất vật lý và hóa học các đơn chất nhóm VIIA",
+        "topics": [
+          "Đơn chất F2, Cl2, Br2, I2",
+          "Tính oxi hóa mạnh của halogen"
+        ]
+      },
+      {
+        "id": "bai-18",
+        "title": "Bài 18: Hydrogen halide và một số phản ứng của ion halide",
+        "topics": [
+          "Hydrogen halide (HF, HCl, HBr, HI)",
+          "Tính acid và tính khử của ion halide",
+          "Nhận biết ion halide (Ag+)"
+        ]
+      }
+    ]
+  }
+]

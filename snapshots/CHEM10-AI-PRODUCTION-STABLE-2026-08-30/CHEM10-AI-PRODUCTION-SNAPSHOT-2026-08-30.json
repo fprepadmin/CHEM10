@@ -1,0 +1,41 @@
+{
+  "snapshotName": "CHEM10-AI-PRODUCTION-STABLE-2026-08-30",
+  "backupDate": "2026-08-30",
+  "backupTimestamp": "2026-08-30T10:17:00.000Z",
+  "environment": "Production / Published",
+  "firebaseProjectId": "scientific-botany-rxctm",
+  "firestoreDatabaseId": "ai-studio-chem10aintphahc1-630657b5-8739-48ec-8327-ab97a551a10f",
+  "appletId": "630657b5-8739-48ec-8327-ab97a551a10f",
+  "buildVersion": "1.0.0-chem10-production-stable",
+  "securityRulesVersion": "Firestore Rules 2.0 (Zero-Leakage: Strict questions & answerKeys Isolation)",
+  "sourceCodeSnapshotPath": "snapshots/CHEM10-AI-PRODUCTION-STABLE-2026-08-30/",
+  "collectionsIncluded": [
+    "users",
+    "questions",
+    "answerKeys",
+    "questionSets",
+    "assignments",
+    "classes",
+    "submissions",
+    "classLogs",
+    "ai_generations"
+  ],
+  "dataIntegrityStats": {
+    "curriculumChapters": 7,
+    "baselineDemoQuestions": 12,
+    "baselineAnswerKeys": 12,
+    "questionsAndAnswerKeysMatchRate": "100%",
+    "rbacRolesVerified": [
+      "ADMIN",
+      "TEACHER",
+      "STUDENT"
+    ],
+    "adminEmails": [
+      "muoint1311@gmail.com",
+      "muoint@fpt.edu.vn"
+    ],
+    "serverSideGradingEndpoint": "/api/grade-submission",
+    "studentAnswerExposure": "ZERO_EXPOSURE_CONFIRMED"
+  },
+  "snapshotStatus": "VERIFIED_PRODUCTION_READY"
+}

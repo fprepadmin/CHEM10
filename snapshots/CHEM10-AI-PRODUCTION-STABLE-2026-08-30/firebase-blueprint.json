@@ -1,0 +1,129 @@
+{
+  "entities": {
+    "UserProfile": {
+      "collection": "users",
+      "fields": {
+        "uid": { "type": "string", "description": "Firebase Auth UID" },
+        "email": { "type": "string", "description": "User email address" },
+        "displayName": { "type": "string", "description": "Full name" },
+        "role": { "type": "string", "description": "User role: admin, teacher, or student" },
+        "photoURL": { "type": "string", "description": "Avatar URL" },
+        "school": { "type": "string", "description": "School name" },
+        "classId": { "type": "string", "description": "Class identifier" },
+        "createdAt": { "type": "string", "description": "Creation ISO timestamp" },
+        "updatedAt": { "type": "string", "description": "Last update timestamp" }
+      }
+    },
+    "Question": {
+      "collection": "questions",
+      "fields": {
+        "grade": { "type": "number", "description": "Grade level (10)" },
+        "chapterId": { "type": "string", "description": "Chapter ID (chuong-1 to chuong-7)" },
+        "chapterTitle": { "type": "string", "description": "Chapter title" },
+        "lessonId": { "type": "string", "description": "Lesson ID" },
+        "lessonTitle": { "type": "string", "description": "Lesson title" },
+        "topic": { "type": "string", "description": "Specific topic" },
+        "type": { "type": "string", "description": "Question type: multiple_choice, true_false, short_answer, etc." },
+        "level": { "type": "string", "description": "Cognitive level: nhan_biet, thong_hieu, van_dung, van_dung_cao" },
+        "content": { "type": "string", "description": "Question body content with LaTeX formulas" },
+        "options": { "type": "array", "description": "List of options A, B, C, D" },
+        "correctAnswer": { "type": "any", "description": "Correct answer identifier or array" },
+        "explanation": { "type": "string", "description": "Detailed pedagogical explanation" },
+        "keywords": { "type": "array", "description": "Keywords for indexing" },
+        "createdBy": { "type": "string", "description": "Author UID" },
+        "creatorEmail": { "type": "string", "description": "Author email" },
+        "status": { "type": "string", "description": "Status: DRAFT, APPROVED, REJECTED" },
+        "source": { "type": "string", "description": "Source origin: MANUAL, EXCEL_IMPORT, WORD_IMPORT, AI_GENERATED" },
+        "createdAt": { "type": "string", "description": "Creation timestamp" }
+      }
+    },
+    "QuestionSet": {
+      "collection": "questionSets",
+      "fields": {
+        "title": { "type": "string", "description": "Exam/practice set title" },
+        "description": { "type": "string", "description": "Set description" },
+        "chapterId": { "type": "string", "description": "Associated chapter ID" },
+        "durationMinutes": { "type": "number", "description": "Test duration in minutes" },
+        "questionIds": { "type": "array", "description": "Array of question IDs" },
+        "totalScore": { "type": "number", "description": "Total maximum score" },
+        "allowReviewAnswers": { "type": "boolean", "description": "Whether students can review answers" },
+        "createdBy": { "type": "string", "description": "Creator UID" },
+        "creatorEmail": { "type": "string", "description": "Creator email" },
+        "isPublic": { "type": "boolean", "description": "Whether public to all students" },
+        "createdAt": { "type": "string", "description": "Creation timestamp" }
+      }
+    },
+    "Assignment": {
+      "collection": "assignments",
+      "fields": {
+        "title": { "type": "string", "description": "Assignment title" },
+        "questionSetId": { "type": "string", "description": "Question set reference" },
+        "teacherId": { "type": "string", "description": "Teacher UID" },
+        "teacherEmail": { "type": "string", "description": "Teacher email" },
+        "teacherName": { "type": "string", "description": "Teacher display name" },
+        "classIds": { "type": "array", "description": "Assigned class IDs" },
+        "targetStudentEmails": { "type": "array", "description": "Targeted student emails" },
+        "startAt": { "type": "string", "description": "Start datetime ISO" },
+        "endAt": { "type": "string", "description": "Due datetime ISO" },
+        "durationMinutes": { "type": "number", "description": "Time limit in minutes" },
+        "maxAttempts": { "type": "number", "description": "Maximum allowed attempts" },
+        "status": { "type": "string", "description": "Assignment status: ACTIVE, SCHEDULED, ENDED, CLOSED" },
+        "createdAt": { "type": "string", "description": "Creation timestamp" }
+      }
+    },
+    "ClassRoom": {
+      "collection": "classes",
+      "fields": {
+        "name": { "type": "string", "description": "Class name (e.g. 10A1)" },
+        "grade": { "type": "number", "description": "Grade level (10)" },
+        "subject": { "type": "string", "description": "Subject name (Hóa học)" },
+        "academicYear": { "type": "string", "description": "Academic year" },
+        "teacherEmail": { "type": "string", "description": "Assigned teacher email" },
+        "teacherName": { "type": "string", "description": "Assigned teacher name" },
+        "studentEmails": { "type": "array", "description": "List of student emails" },
+        "studentCount": { "type": "number", "description": "Total number of students" },
+        "status": { "type": "string", "description": "Status: ACTIVE or ARCHIVED" },
+        "createdAt": { "type": "string", "description": "Creation timestamp" }
+      }
+    },
+    "Submission": {
+      "collection": "submissions",
+      "fields": {
+        "assignmentId": { "type": "string", "description": "Assignment ID if assigned, or null if self-practice" },
+        "questionSetId": { "type": "string", "description": "Question set reference" },
+        "questionSetTitle": { "type": "string", "description": "Question set title" },
+        "studentId": { "type": "string", "description": "Student UID" },
+        "studentEmail": { "type": "string", "description": "Student email" },
+        "studentName": { "type": "string", "description": "Student name" },
+        "startedAt": { "type": "string", "description": "Start timestamp" },
+        "submittedAt": { "type": "string", "description": "Submission timestamp" },
+        "durationSeconds": { "type": "number", "description": "Time spent in seconds" },
+        "score": { "type": "number", "description": "Final score out of 10" },
+        "totalQuestions": { "type": "number", "description": "Total questions in test" },
+        "correctCount": { "type": "number", "description": "Number of correct answers" },
+        "details": { "type": "array", "description": "Per-question answer evaluation details" },
+        "status": { "type": "string", "description": "Status: submitted or graded" }
+      }
+    },
+    "ClassOperationLog": {
+      "collection": "classLogs",
+      "fields": {
+        "action": { "type": "string", "description": "Action name: BULK_ADD_STUDENTS, ARCHIVE_CLASS, etc." },
+        "performedBy": { "type": "string", "description": "Operator UID" },
+        "performedByEmail": { "type": "string", "description": "Operator email" },
+        "classId": { "type": "string", "description": "Target class ID" },
+        "createdAt": { "type": "string", "description": "Timestamp" }
+      }
+    },
+    "AnswerKey": {
+      "collection": "answerKeys",
+      "fields": {
+        "questionId": { "type": "string", "description": "Associated Question ID" },
+        "correctAnswer": { "type": "any", "description": "Correct answer identifier or array" },
+        "explanation": { "type": "string", "description": "Pedagogical explanation" },
+        "createdAt": { "type": "string", "description": "Creation timestamp" },
+        "updatedAt": { "type": "string", "description": "Update timestamp" }
+      }
+    }
+  }
+}

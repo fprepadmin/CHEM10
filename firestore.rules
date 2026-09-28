@@ -1,0 +1,78 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function isAdmin() {
+      return isAuthenticated() && (
+        request.auth.token.email.lower() == 'thongtnmfct31178@gmail.com' ||
+        request.auth.token.email.lower() == 'muoint@fpt.edu.vn'
+      );
+    }
+    
+    function isTeacher() {
+      return isAdmin() || (
+        isAuthenticated() && 
+        exists(/databases/$(database)/documents/users/$(request.auth.uid)) && 
+        (get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['teacher', 'admin', 'TEACHER', 'ADMIN', 'Teacher', 'Admin'])
+      );
+    }
+
+    // Users collection
+    match /users/{userId} {
+      allow read: if isAuthenticated();
+      allow write: if isAuthenticated() && (request.auth.uid == userId || isAdmin());
+    }
+
+    // Questions collection (Content, options, metadata - sanitized for student practice)
+    match /questions/{questionId} {
+      allow read: if true;
+      allow write: if isTeacher();
+    }
+
+    // AnswerKeys collection (Correct answers & detailed explanations)
+    match /answerKeys/{questionId} {
+      allow list: if isTeacher();
+      allow get: if true;
+      allow write: if isTeacher();
+    }
+
+    // Question Sets / Tests
+    match /questionSets/{setId} {
+      allow read: if true;
+      allow write: if isTeacher();
+    }
+
+    // Assignments
+    match /assignments/{assignmentId} {
+      allow read: if true;
+      allow write: if isTeacher();
+    }
+
+    // Classes
+    match /classes/{classId} {
+      allow read: if true;
+      allow write: if isTeacher();
+    }
+
+    // Submissions
+    match /submissions/{submissionId} {
+      allow read: if isAuthenticated() && (
+        request.auth.uid == resource.data.studentId || 
+        request.auth.token.email == resource.data.studentEmail ||
+        isTeacher()
+      );
+      allow create: if isAuthenticated();
+      allow update, delete: if isTeacher();
+    }
+
+    // Class Operation Logs
+    match /classLogs/{logId} {
+      allow read, write: if isTeacher();
+    }
+  }
+}
+

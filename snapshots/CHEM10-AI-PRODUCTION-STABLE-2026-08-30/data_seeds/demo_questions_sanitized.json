@@ -1,0 +1,434 @@
+[
+  {
+    "id": "demo-q1",
+    "grade": 10,
+    "chapterId": "chuong-1",
+    "chapterTitle": "Chương 1: Cấu tạo nguyên tử",
+    "lessonId": "bai-1",
+    "lessonTitle": "Bài 1: Thành phần của nguyên tử",
+    "topic": "Hạt proton, neutron, electron",
+    "type": "multiple_choice",
+    "level": "nhan_biet",
+    "content": "Hạt mang điện tích âm trong nguyên tử là loại hạt nào sau đây?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Proton"
+      },
+      {
+        "id": "B",
+        "text": "Neutron"
+      },
+      {
+        "id": "C",
+        "text": "Electron"
+      },
+      {
+        "id": "D",
+        "text": "Hạt nhân"
+      }
+    ],
+    "keywords": [
+      "electron",
+      "điện tích",
+      "hạt cơ bản"
+    ],
+    "createdBy": "admin",
+    "creatorEmail": "muoint@fpt.edu.vn",
+    "createdAt": "2026-08-30T10:16:40.173Z",
+    "status": "DEMO"
+  },
+  {
+    "id": "demo-q2",
+    "grade": 10,
+    "chapterId": "chuong-1",
+    "chapterTitle": "Chương 1: Cấu tạo nguyên tử",
+    "lessonId": "bai-3",
+    "lessonTitle": "Bài 3: Cấu trúc vỏ electron nguyên tử",
+    "topic": "Cấu hình electron nguyên tử",
+    "type": "multiple_choice",
+    "level": "thong_hieu",
+    "content": "Nguyên tử kim loại Sodium (Na) có số hiệu nguyên tử Z = 11. Cấu hình electron của nguyên tử Na là:",
+    "options": [
+      {
+        "id": "A",
+        "text": "1s² 2s² 2p⁶ 3s¹"
+      },
+      {
+        "id": "B",
+        "text": "1s² 2s² 2p⁶ 3s²"
+      },
+      {
+        "id": "C",
+        "text": "1s² 2s² 2p⁵ 3s²"
+      },
+      {
+        "id": "D",
+        "text": "1s² 2s² 2p⁶"
+      }
+    ],
+    "keywords": [
+      "cấu hình electron",
+      "sodium",
+      "Z=11"
+    ],
+    "createdBy": "admin",
+    "creatorEmail": "muoint@fpt.edu.vn",
+    "createdAt": "2026-08-30T10:16:40.174Z",
+    "status": "DEMO"
+  },
+  {
+    "id": "demo-q3",
+    "grade": 10,
+    "chapterId": "chuong-1",
+    "chapterTitle": "Chương 1: Cấu tạo nguyên tử",
+    "lessonId": "bai-2",
+    "lessonTitle": "Bài 2: Nguyên tố hóa học",
+    "topic": "Đồng vị và nguyên tử khối trung bình",
+    "type": "true_false",
+    "level": "thong_hieu",
+    "content": "Xét các phát biểu sau đây về nguyên tố hóa học và đồng vị:",
+    "options": [
+      {
+        "id": "a",
+        "text": "Các đồng vị của cùng một nguyên tố có cùng số proton nhưng khác nhau về số neutron."
+      },
+      {
+        "id": "b",
+        "text": "Số khối A bằng tổng số proton và số electron trong hạt nhân."
+      },
+      {
+        "id": "c",
+        "text": "Đồng vị là các nguyên tử có cùng điện tích hạt nhân."
+      },
+      {
+        "id": "d",
+        "text": "Số hiệu nguyên tử Z luôn bằng số đơn vị điện tích hạt nhân."
+      }
+    ],
+    "keywords": [
+      "đồng vị",
+      "số khối",
+      "hạt nhân"
+    ],
+    "createdBy": "admin",
+    "creatorEmail": "muoint@fpt.edu.vn",
+    "createdAt": "2026-08-30T10:16:40.174Z",
+    "status": "DEMO"
+  },
+  {
+    "id": "demo-q4",
+    "grade": 10,
+    "chapterId": "chuong-2",
+    "chapterTitle": "Chương 2: Bảng tuần hoàn các nguyên tố hóa học",
+    "lessonId": "bai-5",
+    "lessonTitle": "Bài 5: Xu hướng biến đổi tính chất trong bảng tuần hoàn",
+    "topic": "Bán kính nguyên tử",
+    "type": "multiple_choice",
+    "level": "van_dung",
+    "content": "Trong một chu kì, theo chiều tăng dần của điện tích hạt nhân từ trái sang phải, bán kính nguyên tử của các nguyên tố nói chung:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Tăng dần do số electron tăng."
+      },
+      {
+        "id": "B",
+        "text": "Giảm dần do lực hút giữa hạt nhân với các electron lớp ngoài cùng tăng."
+      },
+      {
+        "id": "C",
+        "text": "Không đổi vì có cùng số lớp electron."
+      },
+      {
+        "id": "D",
+        "text": "Biến đổi không theo quy luật."
+      }
+    ],
+    "keywords": [
+      "bán kính nguyên tử",
+      "chu kì",
+      "quy luật tuần hoàn"
+    ],
+    "createdBy": "admin",
+    "creatorEmail": "muoint@fpt.edu.vn",
+    "createdAt": "2026-08-30T10:16:40.174Z",
+    "status": "DEMO"
+  },
+  {
+    "id": "demo-q5",
+    "grade": 10,
+    "chapterId": "chuong-3",
+    "chapterTitle": "Chương 3: Liên kết hóa học",
+    "lessonId": "bai-8",
+    "lessonTitle": "Bài 8: Liên kết ion",
+    "topic": "Bản chất liên kết ion",
+    "type": "short_answer",
+    "level": "nhan_biet",
+    "content": "Nhập công thức phân tử hợp chất ion được tạo thành bởi kim loại Magnesium (Mg, hóa trị II) và phi kim Chlorine (Cl, hóa trị I).",
+    "keywords": [
+      "liên kết ion",
+      "MgCl2",
+      "công thức hóa học"
+    ],
+    "createdBy": "admin",
+    "creatorEmail": "muoint@fpt.edu.vn",
+    "createdAt": "2026-08-30T10:16:40.174Z",
+    "status": "DEMO"
+  },
+  {
+    "id": "demo-q6",
+    "grade": 10,
+    "chapterId": "chuong-4",
+    "chapterTitle": "Chương 4: Phản ứng oxi hóa - khử",
+    "lessonId": "bai-11",
+    "lessonTitle": "Bài 11: Phản ứng oxi hóa - khử và số oxi hóa",
+    "topic": "Quy tắc xác định số oxi hóa",
+    "type": "short_answer",
+    "level": "thong_hieu",
+    "content": "Số oxi hóa của nguyên tử Lưu huỳnh (S) trong phân tử H₂SO₄ là bao nhiêu? (Nhập dấu + kèm theo giá trị, ví dụ: +6)",
+    "keywords": [
+      "số oxi hóa",
+      "H2SO4",
+      "Lưu huỳnh"
+    ],
+    "createdBy": "admin",
+    "creatorEmail": "muoint@fpt.edu.vn",
+    "createdAt": "2026-08-30T10:16:40.174Z",
+    "status": "DEMO"
+  },
+  {
+    "id": "demo-q7",
+    "grade": 10,
+    "chapterId": "chuong-4",
+    "chapterTitle": "Chương 4: Phản ứng oxi hóa - khử",
+    "lessonId": "bai-12",
+    "lessonTitle": "Bài 12: Cân bằng phản ứng oxi hóa - khử",
+    "topic": "Phương pháp thăng bằng electron",
+    "type": "equation_balance",
+    "level": "van_dung",
+    "content": "Cân bằng phản ứng oxi hóa khử sau bằng phương pháp thăng bằng electron và xác định tổng hệ số cân bằng các chất (tối giản, số nguyên):\nFe + HNO₃ (loãng) → Fe(NO₃)₃ + NO + H₂O",
+    "options": [
+      {
+        "id": "A",
+        "text": "1 + 4 → 1 + 1 + 2 (Tổng hệ số = 9)"
+      },
+      {
+        "id": "B",
+        "text": "2 + 8 → 2 + 2 + 4 (Tổng hệ số = 18)"
+      },
+      {
+        "id": "C",
+        "text": "1 + 6 → 1 + 1 + 3 (Tổng hệ số = 12)"
+      },
+      {
+        "id": "D",
+        "text": "3 + 8 → 3 + 2 + 4 (Tổng hệ số = 20)"
+      }
+    ],
+    "keywords": [
+      "cân bằng electron",
+      "Fe + HNO3",
+      "tổng hệ số"
+    ],
+    "createdBy": "admin",
+    "creatorEmail": "muoint@fpt.edu.vn",
+    "createdAt": "2026-08-30T10:16:40.174Z",
+    "status": "DEMO"
+  },
+  {
+    "id": "demo-q8",
+    "grade": 10,
+    "chapterId": "chuong-7",
+    "chapterTitle": "Chương 7: Nguyên tố nhóm Halogen (VIIA)",
+    "lessonId": "bai-18",
+    "lessonTitle": "Bài 18: Hydrogen halide và một số phản ứng của ion halide",
+    "topic": "Nhận biết ion halide (Ag+)",
+    "type": "identification",
+    "level": "nhan_biet",
+    "content": "Thuốc thử đặc trưng dùng để nhận biết dung dịch chứa ion Chloride (Cl⁻) trong phòng thí nghiệm là dung dịch nào sau đây?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Dung dịch BaCl₂ (tạo kết tủa trắng)"
+      },
+      {
+        "id": "B",
+        "text": "Dung dịch AgNO₃ (tạo kết tủa trắng AgCl không tan trong acid mạnh)"
+      },
+      {
+        "id": "C",
+        "text": "Dung dịch NaOH (tạo kết tủa xanh)"
+      },
+      {
+        "id": "D",
+        "text": "Quỳ tím chuyển sang màu đỏ"
+      }
+    ],
+    "keywords": [
+      "nhận biết",
+      "ion Cl-",
+      "AgNO3"
+    ],
+    "createdBy": "admin",
+    "creatorEmail": "muoint@fpt.edu.vn",
+    "createdAt": "2026-08-30T10:16:40.174Z",
+    "status": "DEMO"
+  },
+  {
+    "id": "demo-q9",
+    "grade": 10,
+    "chapterId": "chuong-5",
+    "chapterTitle": "Chương 5: Năng lượng hóa học",
+    "lessonId": "bai-13",
+    "lessonTitle": "Bài 13: Phản ứng tỏa nhiệt, thu nhiệt",
+    "topic": "Biến thiên enthalpy phản ứng (ΔrH°₂₉₈)",
+    "type": "multiple_choice",
+    "level": "nhan_biet",
+    "content": "Phản ứng nào sau đây là phản ứng tỏa nhiệt?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Phản ứng nung đá vôi (CaCO₃ → CaO + CO₂)"
+      },
+      {
+        "id": "B",
+        "text": "Phản ứng đốt cháy than (C + O₂ → CO₂)"
+      },
+      {
+        "id": "C",
+        "text": "Phản ứng quang hợp của cây xanh"
+      },
+      {
+        "id": "D",
+        "text": "Phản ứng nhiệt phân Cu(OH)₂"
+      }
+    ],
+    "keywords": [
+      "phản ứng tỏa nhiệt",
+      "đốt cháy than",
+      "enthalpy"
+    ],
+    "createdBy": "admin",
+    "creatorEmail": "muoint@fpt.edu.vn",
+    "createdAt": "2026-08-30T10:16:40.174Z",
+    "status": "DEMO"
+  },
+  {
+    "id": "demo-q10",
+    "grade": 10,
+    "chapterId": "chuong-5",
+    "chapterTitle": "Chương 5: Năng lượng hóa học",
+    "lessonId": "bai-14",
+    "lessonTitle": "Bài 14: Tính biến thiên enthalpy của phản ứng hóa học",
+    "topic": "Tính toán theo ΔfH° và Eb",
+    "type": "calculation",
+    "level": "van_dung",
+    "content": "Cho phản ứng: CH₄(g) + 2O₂(g) → CO₂(g) + 2H₂O(l)\nBiết nhiệt tạo thành chuẩn ΔfH°₂₉₈ (kJ/mol) của CH₄(g), CO₂(g) và H₂O(l) lần lượt là: -74,8; -393,5; -285,8.\nBiến thiên enthalpy chuẩn của phản ứng đốt cháy 1 mol khí methane là:",
+    "options": [
+      {
+        "id": "A",
+        "text": "-890,3 kJ"
+      },
+      {
+        "id": "B",
+        "text": "+890,3 kJ"
+      },
+      {
+        "id": "C",
+        "text": "-604,5 kJ"
+      },
+      {
+        "id": "D",
+        "text": "-965,1 kJ"
+      }
+    ],
+    "keywords": [
+      "tính enthalpy",
+      "nhiệt tạo thành chuẩn",
+      "methane"
+    ],
+    "createdBy": "admin",
+    "creatorEmail": "muoint@fpt.edu.vn",
+    "createdAt": "2026-08-30T10:16:40.174Z",
+    "status": "DEMO"
+  },
+  {
+    "id": "demo-q11",
+    "grade": 10,
+    "chapterId": "chuong-6",
+    "chapterTitle": "Chương 6: Tốc độ phản ứng hóa học",
+    "lessonId": "bai-16",
+    "lessonTitle": "Bài 16: Các yếu tố ảnh hưởng đến tốc độ phản ứng",
+    "topic": "Ảnh hưởng của nồng độ, nhiệt độ, áp suất",
+    "type": "multiple_choice",
+    "level": "thong_hieu",
+    "content": "Để bảo quản thực phẩm được tươi lâu hơn trong tủ lạnh, người ta đã áp dụng yếu tố nào ảnh hưởng đến tốc độ phản ứng phân hủy?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Tăng diện tích tiếp xúc"
+      },
+      {
+        "id": "B",
+        "text": "Giảm nhiệt độ để làm chậm tốc độ phản ứng oxi hóa và hoạt động vi khuẩn"
+      },
+      {
+        "id": "C",
+        "text": "Tăng nồng độ chất phản ứng"
+      },
+      {
+        "id": "D",
+        "text": "Sử dụng chất xúc tác"
+      }
+    ],
+    "keywords": [
+      "tốc độ phản ứng",
+      "nhiệt độ",
+      "bảo quản thực phẩm"
+    ],
+    "createdBy": "admin",
+    "creatorEmail": "muoint@fpt.edu.vn",
+    "createdAt": "2026-08-30T10:16:40.174Z",
+    "status": "DEMO"
+  },
+  {
+    "id": "demo-q12",
+    "grade": 10,
+    "chapterId": "chuong-6",
+    "chapterTitle": "Chương 6: Tốc độ phản ứng hóa học",
+    "lessonId": "bai-16",
+    "lessonTitle": "Bài 16: Các yếu tố ảnh hưởng đến tốc độ phản ứng",
+    "topic": "Diện tích tiếp xúc và chất xúc tác",
+    "type": "true_false",
+    "level": "van_dung",
+    "content": "Xét các biện pháp sau làm tăng tốc độ phản ứng khi hòa tan đá vôi (CaCO₃) trong dung dịch HCl 1M:",
+    "options": [
+      {
+        "id": "a",
+        "text": "Đập nhỏ khối đá vôi thành bột mịn trước khi cho vào axit."
+      },
+      {
+        "id": "b",
+        "text": "Đun nóng nhẹ dung dịch phản ứng."
+      },
+      {
+        "id": "c",
+        "text": "Thêm nước cất vào làm loãng dung dịch HCl xuống 0,5M."
+      },
+      {
+        "id": "d",
+        "text": "Khuấy đều hỗn hợp phản ứng trong cốc."
+      }
+    ],
+    "keywords": [
+      "yếu tố tốc độ",
+      "đá vôi + HCl",
+      "diện tích tiếp xúc"
+    ],
+    "createdBy": "admin",
+    "creatorEmail": "muoint@fpt.edu.vn",
+    "createdAt": "2026-08-30T10:16:40.174Z",
+    "status": "DEMO"
+  }
+]

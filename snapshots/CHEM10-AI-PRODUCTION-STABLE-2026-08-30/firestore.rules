@@ -1,0 +1,116 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function getUserData() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data;
+    }
+    
+    function isAdmin() {
+      return isAuthenticated() && (
+        request.auth.token.email == 'muoint1311@gmail.com' ||
+        request.auth.token.email == 'muoint@fpt.edu.vn' ||
+        (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && getUserData().role == 'admin')
+      );
+    }
+    
+    function isTeacher() {
+      return isAdmin() || (
+        isAuthenticated() && 
+        exists(/databases/$(database)/documents/users/$(request.auth.uid)) && 
+        (getUserData().role == 'teacher' || getUserData().role == 'admin')
+      );
+    }
+
+    // Users collection - Strict Isolation
+    match /users/{userId} {
+      allow read: if isAuthenticated() && (request.auth.uid == userId || isTeacher());
+      allow create: if isAuthenticated() && (
+        (request.auth.uid == userId && (request.resource.data.role == 'student' || isAdmin())) || isAdmin()
+      );
+      allow update: if isAuthenticated() && (
+        (request.auth.uid == userId && request.resource.data.role == resource.data.role) || isAdmin()
+      );
+      allow delete: if isAdmin();
+    }
+
+    // Questions collection - Contains ONLY question content & options (NO ANSWER KEYS)
+    match /questions/{questionId} {
+      // Teachers and Admins can list and manage all questions
+      allow list: if isTeacher();
+      allow create, update, delete: if isTeacher();
+
+      // Individual question get:
+      // Teachers/Admins can read any question
+      // Students can only read approved/demo questions when referenced by specific ID in their test/practice
+      // Students can NEVER read DRAFT/unapproved questions
+      allow get: if isTeacher() || (
+        isAuthenticated() && (
+          resource.data.status == 'APPROVED' || resource.data.status == 'DEMO'
+        )
+      );
+    }
+
+    // AnswerKeys collection - STRICTLY ISOLATED TO TEACHER & ADMIN ONLY!
+    // Students and Anonymous users are 100% BLOCKED from reading or querying this collection.
+    match /answerKeys/{questionId} {
+      allow read, write: if isTeacher();
+    }
+
+    // Question Sets / Practice Tests
+    match /questionSets/{setId} {
+      allow read: if isAuthenticated();
+      allow create, update, delete: if isTeacher();
+    }
+
+    // Assignments
+    match /assignments/{assignmentId} {
+      allow read: if isAuthenticated();
+      allow create, update, delete: if isTeacher();
+    }
+
+    // Classes
+    match /classes/{classId} {
+      allow read: if isAuthenticated();
+      allow create, update, delete: if isTeacher();
+    }
+
+    // Submissions - Student can only access and write their own submissions
+    match /submissions/{submissionId} {
+      allow read: if isAuthenticated() && (
+        request.auth.uid == resource.data.studentId || 
+        request.auth.token.email == resource.data.studentEmail ||
+        isTeacher()
+      );
+      allow create: if isAuthenticated() && (
+        request.auth.uid == request.resource.data.studentId ||
+        request.auth.token.email == request.resource.data.studentEmail
+      );
+      allow update: if isAuthenticated() && (
+        (request.auth.uid == resource.data.studentId && resource.data.status != 'submitted') || 
+        isTeacher()
+      );
+      allow delete: if isAdmin();
+    }
+
+    // Curriculum metadata
+    match /curriculum/{docId} {
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
+    }
+
+    // AI Generations
+    match /ai_generations/{genId} {
+      allow read, write: if isTeacher();
+    }
+
+    // Class Audit Logs
+    match /classLogs/{logId} {
+      allow read, write: if isTeacher();
+    }
+  }
+}

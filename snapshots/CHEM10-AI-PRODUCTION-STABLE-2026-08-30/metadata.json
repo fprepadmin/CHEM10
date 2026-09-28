@@ -1,0 +1,6 @@
+{
+  "name": "CHEM10 AI - Ôn Tập Hóa Học 10",
+  "description": "Nền tảng ôn tập Hóa học 10 chuẩn chương trình GDPT 2018 với ngân hàng câu hỏi đa dạng, tạo đề tự động và kiểm duyệt AI.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,96 @@
+[
+  {
+    "questionId": "demo-q1",
+    "correctAnswer": "C",
+    "explanation": "Electron (e) mang điện tích âm (-1,602 × 10⁻¹⁹ C hay -1), proton (p) mang điện tích dương (+1), neutron (n) không mang điện.",
+    "createdAt": "2026-08-30T10:16:40.174Z",
+    "updatedAt": "2026-08-30T10:16:40.174Z"
+  },
+  {
+    "questionId": "demo-q2",
+    "correctAnswer": "A",
+    "explanation": "Với Z = 11, các electron được phân bố lần lượt theo thứ tự mức năng lượng: 1s² 2s² 2p⁶ 3s¹.",
+    "createdAt": "2026-08-30T10:16:40.174Z",
+    "updatedAt": "2026-08-30T10:16:40.174Z"
+  },
+  {
+    "questionId": "demo-q3",
+    "correctAnswer": [
+      true,
+      false,
+      true,
+      true
+    ],
+    "explanation": "Ý b sai vì Số khối A = số proton (Z) + số neutron (N), electron nằm ở lớp vỏ nguyên tử không nằm trong hạt nhân.",
+    "createdAt": "2026-08-30T10:16:40.174Z",
+    "updatedAt": "2026-08-30T10:16:40.174Z"
+  },
+  {
+    "questionId": "demo-q4",
+    "correctAnswer": "B",
+    "explanation": "Trong cùng một chu kì, số lớp e không đổi nhưng điện tích hạt nhân tăng dần, lực hút giữa hạt nhân và electron lớp ngoài cùng tăng làm bán kính nguyên tử giảm dần.",
+    "createdAt": "2026-08-30T10:16:40.174Z",
+    "updatedAt": "2026-08-30T10:16:40.174Z"
+  },
+  {
+    "questionId": "demo-q5",
+    "correctAnswer": "MgCl2",
+    "explanation": "Ion Mg²⁺ kết hợp với 2 ion Cl⁻ để tạo thành tinh thể hợp chất ion trung hòa điện có công thức MgCl₂.",
+    "createdAt": "2026-08-30T10:16:40.174Z",
+    "updatedAt": "2026-08-30T10:16:40.174Z"
+  },
+  {
+    "questionId": "demo-q6",
+    "correctAnswer": "+6",
+    "explanation": "Trong H₂SO₄: H có số oxi hóa +1, O có số oxi hóa -2. Gọi x là số oxi hóa của S: 2*(+1) + x + 4*(-2) = 0 => 2 + x - 8 = 0 => x = +6.",
+    "createdAt": "2026-08-30T10:16:40.174Z",
+    "updatedAt": "2026-08-30T10:16:40.174Z"
+  },
+  {
+    "questionId": "demo-q7",
+    "correctAnswer": "A",
+    "explanation": "Quá trình oxi hóa: Fe⁰ → Fe³⁺ + 3e (nhân 1)\nQuá trình khử: N⁺⁵ + 3e → N⁺² (NO) (nhân 1)\nPhương trình: Fe + 4HNO₃ → Fe(NO₃)₃ + NO + 2H₂O. Tổng hệ số = 1 + 4 + 1 + 1 + 2 = 9.",
+    "createdAt": "2026-08-30T10:16:40.174Z",
+    "updatedAt": "2026-08-30T10:16:40.174Z"
+  },
+  {
+    "questionId": "demo-q8",
+    "correctAnswer": "B",
+    "explanation": "Ion Cl⁻ phản ứng với dung dịch AgNO₃ tạo kết tủa trắng bạc chloride (AgCl): Ag⁺ + Cl⁻ → AgCl↓ (màu trắng).",
+    "createdAt": "2026-08-30T10:16:40.174Z",
+    "updatedAt": "2026-08-30T10:16:40.174Z"
+  },
+  {
+    "questionId": "demo-q9",
+    "correctAnswer": "B",
+    "explanation": "Phản ứng đốt cháy nhiên liệu (than, củi, xăng dầu) là phản ứng tỏa nhiệt kèm phát sáng (ΔrH°₂₉₈ < 0). Các phản ứng nung, nhiệt phân, quang hợp đều là phản ứng thu nhiệt.",
+    "createdAt": "2026-08-30T10:16:40.174Z",
+    "updatedAt": "2026-08-30T10:16:40.174Z"
+  },
+  {
+    "questionId": "demo-q10",
+    "correctAnswer": "A",
+    "explanation": "Áp dụng công thức: ΔrH°₂₉₈ = [ΔfH°(CO₂) + 2*ΔfH°(H₂O)] - [ΔfH°(CH₄) + 2*ΔfH°(O₂)] = [-393,5 + 2*(-285,8)] - [-74,8 + 0] = -965,1 + 74,8 = -890,3 kJ.",
+    "createdAt": "2026-08-30T10:16:40.174Z",
+    "updatedAt": "2026-08-30T10:16:40.174Z"
+  },
+  {
+    "questionId": "demo-q11",
+    "correctAnswer": "B",
+    "explanation": "Khi giảm nhiệt độ, tốc độ các phản ứng sinh hóa, thối rữa và hoạt động enzyme của vi sinh vật giảm mạnh, giúp thức ăn lâu hỏng.",
+    "createdAt": "2026-08-30T10:16:40.174Z",
+    "updatedAt": "2026-08-30T10:16:40.174Z"
+  },
+  {
+    "questionId": "demo-q12",
+    "correctAnswer": [
+      true,
+      true,
+      false,
+      true
+    ],
+    "explanation": "a: đúng (tăng diện tích tiếp xúc); b: đúng (tăng nhiệt độ làm tăng tốc độ); c: sai (giảm nồng độ làm giảm tốc độ); d: đúng (khuấy làm tăng tần số va chạm hiệu quả).",
+    "createdAt": "2026-08-30T10:16:40.174Z",
+    "updatedAt": "2026-08-30T10:16:40.174Z"
+  }
+]

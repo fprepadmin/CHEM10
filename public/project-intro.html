@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CHEM10 AI – Nền tảng Ôn tập Hóa học 10</title>
+  <meta name="description" content="Nền tảng ôn tập Hóa học 10 chuẩn GDPT 2018 với ngân hàng câu hỏi đa dạng, tạo đề tự động và kiểm duyệt AI." />
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --primary: #0ea5e9;
+      --primary-dark: #0284c7;
+      --accent: #06b6d4;
+      --accent2: #7c3aed;
+      --bg: #0a0f1e;
+      --bg2: #0f172a;
+      --bg3: #1e293b;
+      --card: #1e293b;
+      --border: #334155;
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --success: #22c55e;
+      --warn: #f59e0b;
+      --danger: #ef4444;
+      --radius: 12px;
+      --shadow: 0 4px 32px rgba(0,0,0,.5);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { max-width: 100%; height: auto; }
+    code {
+      font-family: 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+      background: rgba(14,165,233,.15);
+      color: var(--accent);
+      padding: 2px 7px;
+      border-radius: 5px;
+      font-size: .9em;
+    }
+    pre {
+      background: #020817;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      overflow-x: auto;
+      position: relative;
+    }
+    pre code {
+      background: transparent;
+      color: #e2e8f0;
+      padding: 0;
+      font-size: .88em;
+    }
+
+    /* ===== NAV ===== */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(10,15,30,.85);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-brand {
+      display: flex; align-items: center; gap: .6rem;
+      font-size: 1.2rem; font-weight: 700;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .nav-brand span { font-size: 1.6rem; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: var(--text-muted);
+      font-size: .95rem;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--text); text-decoration: none; }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center;
+      padding: 6rem 2rem 4rem;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(14,165,233,.18) 0%, transparent 70%),
+                  radial-gradient(ellipse 60% 50% at 80% 100%, rgba(124,58,237,.12) 0%, transparent 60%),
+                  var(--bg);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        radial-gradient(circle at 20% 30%, rgba(14,165,233,.08) 0, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(6,182,212,.08) 0, transparent 40%);
+      pointer-events: none;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: rgba(14,165,233,.1);
+      border: 1px solid rgba(14,165,233,.3);
+      color: var(--primary);
+      padding: .35rem 1rem;
+      border-radius: 999px;
+      font-size: .85rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      letter-spacing: .05em;
+    }
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 800;
+      line-height: 1.1;
+      background: linear-gradient(135deg, #fff 30%, var(--accent) 70%, var(--accent2) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+    }
+    .hero h1 span { color: var(--primary); -webkit-text-fill-color: var(--primary); }
+    .hero-sub {
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      color: var(--text-muted);
+      max-width: 620px;
+      margin: 0 auto 2.5rem;
+    }
+    .hero-badges {
+      display: flex; flex-wrap: wrap; gap: .6rem;
+      justify-content: center; margin-bottom: 2.5rem;
+    }
+    .badge {
+      display: inline-flex; align-items: center; gap: .4rem;
+      padding: .3rem .9rem;
+      border-radius: 999px;
+      font-size: .8rem; font-weight: 600;
+      border: 1px solid;
+    }
+    .badge-ts { background: rgba(49,120,198,.12); border-color: rgba(49,120,198,.4); color: #60a5fa; }
+    .badge-react { background: rgba(97,218,251,.08); border-color: rgba(97,218,251,.3); color: #38bdf8; }
+    .badge-firebase { background: rgba(255,202,40,.08); border-color: rgba(255,202,40,.3); color: #fbbf24; }
+    .badge-ai { background: rgba(66,133,244,.1); border-color: rgba(66,133,244,.3); color: #818cf8; }
+    .badge-vite { background: rgba(100,108,255,.1); border-color: rgba(100,108,255,.3); color: #a78bfa; }
+    .hero-cta {
+      display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;
+    }
+    .btn {
+      display: inline-flex; align-items: center; gap: .5rem;
+      padding: .75rem 1.75rem;
+      border-radius: var(--radius);
+      font-weight: 600; font-size: 1rem;
+      transition: all .2s; cursor: pointer; border: none;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--accent2));
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(14,165,233,.35);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(14,165,233,.5); text-decoration: none; }
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid var(--border);
+      color: var(--text);
+    }
+    .btn-outline:hover { border-color: var(--primary); color: var(--primary); text-decoration: none; }
+
+    /* ===== SECTIONS ===== */
+    section { padding: 5rem 2rem; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      display: inline-block;
+      color: var(--primary);
+      font-size: .8rem; font-weight: 700;
+      letter-spacing: .15em; text-transform: uppercase;
+      margin-bottom: .75rem;
+    }
+    .section-title {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+    .section-desc {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 560px;
+    }
+
+    /* ===== FEATURES GRID ===== */
+    #features { background: var(--bg2); }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .feature-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      transition: border-color .2s, transform .2s, box-shadow .2s;
+    }
+    .feature-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(14,165,233,.12);
+    }
+    .feature-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .feature-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: .5rem; }
+    .feature-card p { color: var(--text-muted); font-size: .95rem; }
+
+    /* ===== ARCHITECTURE ===== */
+    #architecture { background: var(--bg); }
+    .arch-diagram {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 1.5rem;
+      align-items: center;
+      margin-top: 3rem;
+    }
+    .arch-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .arch-box.highlight { border-color: var(--primary); background: rgba(14,165,233,.08); }
+    .arch-box .arch-icon { font-size: 2.5rem; margin-bottom: .75rem; }
+    .arch-box h3 { font-size: 1rem; font-weight: 700; margin-bottom: .4rem; }
+    .arch-box p { color: var(--text-muted); font-size: .85rem; }
+    .arch-arrow { font-size: 2rem; color: var(--primary); text-align: center; }
+    .security-flow {
+      background: #020817;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem 2rem;
+      margin-top: 2rem;
+    }
+    .security-flow h4 { color: var(--success); font-size: .9rem; font-weight: 700; margin-bottom: 1rem; letter-spacing: .1em; text-transform: uppercase; }
+    .flow-steps { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem; }
+    .flow-step {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: .5rem 1rem;
+      font-size: .85rem;
+      font-weight: 600;
+    }
+    .flow-step.server { border-color: var(--primary); color: var(--primary); background: rgba(14,165,233,.08); }
+    .flow-arrow { color: var(--text-muted); font-size: 1.2rem; }
+
+    /* ===== CURRICULUM ===== */
+    #curriculum { background: var(--bg2); }
+    .chapters-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1rem;
+      margin-top: 3rem;
+    }
+    .chapter-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      display: flex; align-items: flex-start; gap: 1rem;
+      transition: border-color .2s;
+    }
+    .chapter-card:hover { border-color: var(--accent); }
+    .chapter-num {
+      background: linear-gradient(135deg, var(--primary), var(--accent2));
+      color: #fff;
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: .9rem;
+      flex-shrink: 0;
+    }
+    .chapter-card h4 { font-size: .95rem; font-weight: 700; margin-bottom: .25rem; }
+    .chapter-card p { color: var(--text-muted); font-size: .82rem; }
+
+    /* ===== ROLES ===== */
+    #roles { background: var(--bg); }
+    .roles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .role-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .role-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    }
+    .role-admin::before { background: linear-gradient(90deg, var(--danger), var(--warn)); }
+    .role-teacher::before { background: linear-gradient(90deg, var(--primary), var(--accent)); }
+    .role-student::before { background: linear-gradient(90deg, var(--success), var(--accent)); }
+    .role-badge {
+      display: inline-flex; align-items: center; gap: .4rem;
+      padding: .25rem .75rem;
+      border-radius: 999px;
+      font-size: .75rem; font-weight: 700;
+      letter-spacing: .1em; text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .badge-admin { background: rgba(239,68,68,.12); color: var(--danger); border: 1px solid rgba(239,68,68,.3); }
+    .badge-teacher { background: rgba(14,165,233,.12); color: var(--primary); border: 1px solid rgba(14,165,233,.3); }
+    .badge-student { background: rgba(34,197,94,.12); color: var(--success); border: 1px solid rgba(34,197,94,.3); }
+    .role-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: .75rem; }
+    .role-card ul { list-style: none; }
+    .role-card ul li {
+      color: var(--text-muted);
+      font-size: .9rem;
+      padding: .3rem 0;
+      border-bottom: 1px solid rgba(51,65,85,.5);
+      display: flex; align-items: center; gap: .5rem;
+    }
+    .role-card ul li:last-child { border-bottom: none; }
+    .role-card ul li::before { content: '✓'; color: var(--success); font-weight: 700; flex-shrink: 0; }
+
+    /* ===== INSTALLATION ===== */
+    #install { background: var(--bg2); }
+    .steps { margin-top: 3rem; display: flex; flex-direction: column; gap: 2rem; }
+    .step { display: flex; gap: 1.5rem; align-items: flex-start; }
+    .step-num {
+      background: linear-gradient(135deg, var(--primary), var(--accent2));
+      color: #fff;
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 1rem;
+      flex-shrink: 0;
+      margin-top: .25rem;
+    }
+    .step-content { flex: 1; }
+    .step-content h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: .5rem; }
+    .step-content p { color: var(--text-muted); font-size: .95rem; margin-bottom: .75rem; }
+    .copy-btn {
+      position: absolute; top: .75rem; right: .75rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: .3rem .7rem;
+      border-radius: 6px;
+      font-size: .75rem; cursor: pointer;
+      transition: all .2s;
+    }
+    .copy-btn:hover { color: var(--text); border-color: var(--primary); }
+
+    /* ===== COMMANDS TABLE ===== */
+    .commands-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 2rem;
+    }
+    .commands-table th, .commands-table td {
+      text-align: left;
+      padding: .85rem 1.25rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .commands-table th {
+      background: var(--bg3);
+      font-size: .8rem; font-weight: 700;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .commands-table tr:last-child td { border-bottom: none; }
+    .commands-table tr:hover td { background: rgba(255,255,255,.02); }
+    .cmd { color: var(--accent); font-family: monospace; font-size: .9rem; }
+
+    /* ===== SECURITY ===== */
+    #security { background: var(--bg); }
+    .security-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .security-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      border-left: 3px solid var(--success);
+    }
+    .security-card .sec-icon { font-size: 1.8rem; margin-bottom: .75rem; }
+    .security-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: .5rem; }
+    .security-card p { color: var(--text-muted); font-size: .88rem; }
+
+    /* ===== TECH STACK ===== */
+    #stack { background: var(--bg2); }
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 1rem;
+      margin-top: 2.5rem;
+    }
+    .tech-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      text-align: center;
+      transition: border-color .2s, transform .2s;
+    }
+    .tech-card:hover { border-color: var(--primary); transform: translateY(-3px); }
+    .tech-card .tech-icon { font-size: 2rem; margin-bottom: .5rem; display: block; }
+    .tech-card h4 { font-size: .95rem; font-weight: 700; }
+    .tech-card span { color: var(--text-muted); font-size: .8rem; }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    .footer-logo {
+      font-size: 1.8rem; font-weight: 800;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      margin-bottom: .5rem;
+    }
+    .footer-sub { color: var(--text-muted); font-size: .9rem; margin-bottom: 1.5rem; }
+    .footer-tags { display: flex; flex-wrap: wrap; gap: .5rem; justify-content: center; }
+    .footer-tag {
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: .25rem .75rem;
+      border-radius: 999px;
+      font-size: .78rem;
+    }
+    .footer-copy { color: var(--text-muted); font-size: .82rem; margin-top: 2rem; }
+
+    /* ===== SCROLL INDICATOR ===== */
+    .scroll-top {
+      position: fixed; bottom: 2rem; right: 2rem;
+      background: var(--primary);
+      color: #fff;
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.25rem;
+      cursor: pointer; border: none;
+      box-shadow: 0 4px 20px rgba(14,165,233,.4);
+      opacity: 0; transition: opacity .3s, transform .2s;
+      z-index: 99;
+    }
+    .scroll-top.visible { opacity: 1; }
+    .scroll-top:hover { transform: translateY(-3px); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .arch-diagram { grid-template-columns: 1fr; }
+      .arch-arrow { transform: rotate(90deg); }
+      .flow-steps { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">
+    <span>⚗️</span> CHEM10 AI
+  </div>
+  <ul class="nav-links">
+    <li><a href="#features">Tính năng</a></li>
+    <li><a href="#curriculum">Chương trình</a></li>
+    <li><a href="#roles">Vai trò</a></li>
+    <li><a href="#install">Cài đặt</a></li>
+    <li><a href="#security">Bảo mật</a></li>
+    <li><a href="#stack">Tech Stack</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">⚗️ &nbsp;Hóa học 10 · GDPT 2018 · Tích hợp Gemini AI</div>
+  <h1>CHEM10 <span>AI</span></h1>
+  <p class="hero-sub">
+    Nền tảng ôn tập Hóa học 10 thông minh — Ngân hàng câu hỏi đa dạng,
+    tạo đề tự động bằng AI, chấm bài bảo mật Server-side, phân quyền 3 tầng.
+  </p>
+  <div class="hero-badges">
+    <span class="badge badge-ts">TypeScript 5.8</span>
+    <span class="badge badge-react">React 19</span>
+    <span class="badge badge-firebase">Firebase 12</span>
+    <span class="badge badge-ai">Gemini AI</span>
+    <span class="badge badge-vite">Vite 6</span>
+  </div>
+  <div class="hero-cta">
+    <a href="#install" class="btn btn-primary">🚀 Bắt đầu cài đặt</a>
+    <a href="#features" class="btn btn-outline">✨ Xem tính năng</a>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="container">
+    <span class="section-label">✨ Tính năng</span>
+    <h2 class="section-title">Đầy đủ công cụ cho dạy &amp; học Hóa 10</h2>
+    <p class="section-desc">Từ ngân hàng câu hỏi đến hệ thống chấm bài bảo mật — mọi thứ bạn cần trong một nền tảng.</p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <span class="feature-icon">🧪</span>
+        <h3>Ngân hàng câu hỏi phong phú</h3>
+        <p>7 chương Hóa 10 GDPT 2018 · Trắc nghiệm 4 lựa chọn, Đúng/Sai 4 ý, Tự luận ngắn, Tính toán, Cân bằng PTHH</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🤖</span>
+        <h3>Tạo đề thi bằng AI</h3>
+        <p>Gemini AI tự động sinh câu hỏi theo chương, mức độ (nhận biết / thông hiểu / vận dụng) và chủ đề tùy chỉnh</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🔒</span>
+        <h3>Chấm bài Server-side bảo mật</h3>
+        <p>Đáp án chỉ tồn tại trên server Express — học sinh không thể gian lận hoặc đọc đáp án từ network requests</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">👥</span>
+        <h3>Phân quyền 3 tầng</h3>
+        <p>ADMIN · TEACHER · STUDENT với Firestore Security Rules nghiêm ngặt — Zero Answer-Key Exposure đã xác nhận</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">📊</span>
+        <h3>Báo cáo &amp; Phân tích</h3>
+        <p>Thống kê điểm số chi tiết từng câu, biểu đồ kết quả, lịch sử làm bài, so sánh giữa các lần nộp</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">📝</span>
+        <h3>Xuất đề Word / Excel</h3>
+        <p>Tạo file đề thi (.docx) và đáp án chuẩn định dạng có thể in ấn trực tiếp, tương thích với mọi phiên bản Office</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🏫</span>
+        <h3>Quản lý lớp học</h3>
+        <p>Tạo lớp, giao bài có thời hạn, theo dõi tiến độ học sinh, thống kê lớp theo chương</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">⚡</span>
+        <h3>Real-time với Firebase</h3>
+        <p>Cập nhật kết quả tức thì, đồng bộ đa thiết bị với Firestore — không cần tải lại trang</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARCHITECTURE -->
+<section id="architecture">
+  <div class="container">
+    <span class="section-label">🏗️ Kiến trúc</span>
+    <h2 class="section-title">Thiết kế bảo mật từ đầu đến cuối</h2>
+    <p class="section-desc">Đáp án được tách biệt hoàn toàn khỏi client — học sinh không bao giờ nhận được đáp án thực.</p>
+    <div class="arch-diagram">
+      <div class="arch-box highlight">
+        <div class="arch-icon">⚛️</div>
+        <h3>React 19 Client</h3>
+        <p>TypeScript · Tailwind CSS 4<br/>Vite 6 · KaTeX · Motion</p>
+      </div>
+      <div class="arch-arrow">⇄</div>
+      <div class="arch-box highlight">
+        <div class="arch-icon">🖥️</div>
+        <h3>Express.js Server</h3>
+        <p>Chấm bài · API grading<br/>Port 3000 · Node.js</p>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr auto 1fr;gap:1.5rem;align-items:center;margin-top:1.5rem">
+      <div></div>
+      <div class="arch-arrow" style="text-align:center">⇄</div>
+      <div></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:0">
+      <div class="arch-box">
+        <div class="arch-icon">🔥</div>
+        <h3>Firebase Firestore</h3>
+        <p>questions · answerKeys<br/>users · submissions · classes</p>
+      </div>
+      <div class="arch-box">
+        <div class="arch-icon">🤖</div>
+        <h3>Gemini AI API</h3>
+        <p>Tạo câu hỏi tự động<br/>Hỗ trợ học sinh học bài</p>
+      </div>
+    </div>
+    <div class="security-flow">
+      <h4>🔐 Luồng chấm bài Zero-Exposure</h4>
+      <div class="flow-steps">
+        <div class="flow-step">📱 Học sinh nộp bài</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step server">🖥️ Express Server nhận</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step server">🔥 Fetch answerKeys từ Firestore</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step server">⚖️ So sánh đáp án (server-only)</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">📊 Trả về điểm số (không trả đáp án)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CURRICULUM -->
+<section id="curriculum">
+  <div class="container">
+    <span class="section-label">📚 Chương trình</span>
+    <h2 class="section-title">7 chương Hóa học 10 chuẩn GDPT 2018</h2>
+    <p class="section-desc">Toàn bộ nội dung được xây dựng theo đúng khung chương trình Bộ GD&amp;ĐT Việt Nam.</p>
+    <div class="chapters-grid">
+      <div class="chapter-card">
+        <div class="chapter-num">1</div>
+        <div>
+          <h4>Nhập môn Hóa học</h4>
+          <p>Đối tượng, phương pháp, an toàn thí nghiệm</p>
+        </div>
+      </div>
+      <div class="chapter-card">
+        <div class="chapter-num">2</div>
+        <div>
+          <h4>Nguyên tử</h4>
+          <p>Thành phần, mô hình, cấu hình electron</p>
+        </div>
+      </div>
+      <div class="chapter-card">
+        <div class="chapter-num">3</div>
+        <div>
+          <h4>Bảng tuần hoàn</h4>
+          <p>Cấu tạo, xu hướng tuần hoàn, ý nghĩa</p>
+        </div>
+      </div>
+      <div class="chapter-card">
+        <div class="chapter-num">4</div>
+        <div>
+          <h4>Liên kết hóa học</h4>
+          <p>Ion, cộng hóa trị, kim loại, hình học phân tử</p>
+        </div>
+      </div>
+      <div class="chapter-card">
+        <div class="chapter-num">5</div>
+        <div>
+          <h4>Năng lượng hóa học</h4>
+          <p>Nhiệt phản ứng, enthalpy, phương trình nhiệt hóa học</p>
+        </div>
+      </div>
+      <div class="chapter-card">
+        <div class="chapter-num">6</div>
+        <div>
+          <h4>Tốc độ phản ứng</h4>
+          <p>Biểu thức, yếu tố ảnh hưởng, ứng dụng</p>
+        </div>
+      </div>
+      <div class="chapter-card">
+        <div class="chapter-num">7</div>
+        <div>
+          <h4>Nguyên tố nhóm VIIA</h4>
+          <p>Halogen: F, Cl, Br, I — tính chất và điều chế</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROLES -->
+<section id="roles">
+  <div class="container">
+    <span class="section-label">👥 Phân quyền</span>
+    <h2 class="section-title">Hệ thống 3 vai trò rõ ràng</h2>
+    <p class="section-desc">Mỗi vai trò có quyền truy cập riêng biệt, được bảo vệ bởi Firestore Security Rules.</p>
+    <div class="roles-grid">
+      <div class="role-card role-admin">
+        <span class="role-badge badge-admin">🔴 ADMIN</span>
+        <h3>Quản trị viên hệ thống</h3>
+        <ul>
+          <li>Toàn quyền trên mọi collection</li>
+          <li>Quản lý người dùng và phân quyền</li>
+          <li>Xem tất cả bài nộp và kết quả</li>
+          <li>Cấu hình hệ thống và dữ liệu seed</li>
+          <li>Truy cập endpoint migration &amp; debug</li>
+        </ul>
+      </div>
+      <div class="role-card role-teacher">
+        <span class="role-badge badge-teacher">🔵 TEACHER</span>
+        <h3>Giáo viên</h3>
+        <ul>
+          <li>Tạo và quản lý câu hỏi trong lớp</li>
+          <li>Giao bài kiểm tra có thời hạn</li>
+          <li>Xem kết quả bài nộp của học sinh</li>
+          <li>Tạo đề thi bằng AI (Gemini)</li>
+          <li>Xuất đề và đáp án ra Word/Excel</li>
+        </ul>
+      </div>
+      <div class="role-card role-student">
+        <span class="role-badge badge-student">🟢 STUDENT</span>
+        <h3>Học sinh</h3>
+        <ul>
+          <li>Ôn luyện câu hỏi trong ngân hàng</li>
+          <li>Làm bài kiểm tra được giao</li>
+          <li>Xem điểm số và phân tích kết quả</li>
+          <li>Không thể đọc collection answerKeys</li>
+          <li>Không thể xem bài của học sinh khác</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSTALLATION -->
+<section id="install">
+  <div class="container">
+    <span class="section-label">🚀 Cài đặt</span>
+    <h2 class="section-title">Bắt đầu trong 5 bước</h2>
+    <p class="section-desc">Yêu cầu: Node.js ≥ 18, tài khoản Firebase, Gemini API Key.</p>
+    <div class="steps">
+
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h3>Clone repo &amp; cài dependencies</h3>
+          <p>Tải source code và cài đặt toàn bộ thư viện phụ thuộc.</p>
+          <pre><code>git clone &lt;repo-url&gt;
+cd CHEM10
+npm install</code></pre>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h3>Cấu hình Firebase</h3>
+          <p>Điền thông tin project Firebase vào file cấu hình. Lấy từ <a href="https://console.firebase.google.com" target="_blank" rel="noopener">Firebase Console</a> → Project Settings → Your apps.</p>
+          <pre><code>// firebase-applet-config.json
+{
+  "projectId": "your-project-id",
+  "appId": "your-app-id",
+  "apiKey": "your-web-api-key",
+  "authDomain": "your-project.firebaseapp.com",
+  "firestoreDatabaseId": "your-db-id",
+  "storageBucket": "your-project.firebasestorage.app",
+  "messagingSenderId": "your-sender-id"
+}</code></pre>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h3>Tạo file .env.local</h3>
+          <p>Lấy Gemini API Key tại <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">aistudio.google.com/apikey</a> (miễn phí).</p>
+          <pre><code>cp .env.example .env.local
+
+# Chỉnh sửa .env.local:
+GEMINI_API_KEY=your_gemini_api_key_here
+APP_URL=http://localhost:3000</code></pre>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <h3>Deploy Firestore Security Rules</h3>
+          <p>Thiết lập phân quyền database để bảo vệ dữ liệu đáp án.</p>
+          <pre><code>npm install -g firebase-tools
+firebase login
+firebase use your-project-id
+firebase deploy --only firestore:rules</code></pre>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-content">
+          <h3>Chạy development server</h3>
+          <p>Server Express + Vite HMR chạy đồng thời tại port 3000.</p>
+          <pre><code>npm run dev
+
+# Mở trình duyệt: http://localhost:3000 🎉</code></pre>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Commands reference -->
+    <h3 style="margin-top:3rem;font-size:1.3rem;font-weight:700">📦 Các lệnh NPM</h3>
+    <table class="commands-table">
+      <thead>
+        <tr>
+          <th>Lệnh</th>
+          <th>Mô tả</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><code class="cmd">npm run dev</code></td><td>Chạy server development (Vite HMR + Express)</td></tr>
+        <tr><td><code class="cmd">npm run build</code></td><td>Build production bundle (Vite + esbuild)</td></tr>
+        <tr><td><code class="cmd">npm run start</code></td><td>Chạy server production từ <code>dist/</code></td></tr>
+        <tr><td><code class="cmd">npm run lint</code></td><td>Kiểm tra lỗi TypeScript (tsc --noEmit)</td></tr>
+        <tr><td><code class="cmd">npm run preview</code></td><td>Preview bản build production local</td></tr>
+        <tr><td><code class="cmd">npm run clean</code></td><td>Xóa thư mục <code>dist/</code> để build sạch</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- SECURITY -->
+<section id="security">
+  <div class="container">
+    <span class="section-label">🔐 Bảo mật</span>
+    <h2 class="section-title">Zero Answer-Key Exposure</h2>
+    <p class="section-desc">Hệ thống được thiết kế từ đầu để đáp án không bao giờ tiếp cận được phía client.</p>
+    <div class="security-grid">
+      <div class="security-card">
+        <div class="sec-icon">🛡️</div>
+        <h3>Server-side Grading</h3>
+        <p>Toàn bộ logic chấm điểm xử lý tại Express server. Client chỉ nhận điểm số — không nhận đáp án.</p>
+      </div>
+      <div class="security-card">
+        <div class="sec-icon">🔥</div>
+        <h3>Firestore Rules Strict</h3>
+        <p>Collection <code>answerKeys</code> chỉ đọc được bởi server. Học sinh bị deny tuyệt đối ở mức database.</p>
+      </div>
+      <div class="security-card">
+        <div class="sec-icon">🏷️</div>
+        <h3>RBAC 3 tầng</h3>
+        <p>Phân quyền ADMIN / TEACHER / STUDENT được kiểm tra cả phía server lẫn Firestore Rules.</p>
+      </div>
+      <div class="security-card">
+        <div class="sec-icon">🔑</div>
+        <h3>Secrets qua ENV</h3>
+        <p>API Keys, Firebase config không được commit vào git — chỉ tồn tại trong biến môi trường runtime.</p>
+      </div>
+      <div class="security-card">
+        <div class="sec-icon">⏱️</div>
+        <h3>Kiểm tra Assignment</h3>
+        <p>Server xác minh bài giao còn hiệu lực, chưa đóng, học sinh có trong danh sách trước khi chấm.</p>
+      </div>
+      <div class="security-card">
+        <div class="sec-icon">📋</div>
+        <h3>Audit Log</h3>
+        <p>Mọi lần chấm bài được ghi log đầy đủ — questionId, source, kết quả — để kiểm tra khi cần.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<section id="stack">
+  <div class="container">
+    <span class="section-label">⚙️ Tech Stack</span>
+    <h2 class="section-title">Công nghệ hiện đại, production-ready</h2>
+    <div class="tech-grid">
+      <div class="tech-card">
+        <span class="tech-icon">⚛️</span>
+        <h4>React 19</h4>
+        <span>UI Framework</span>
+      </div>
+      <div class="tech-card">
+        <span class="tech-icon">📘</span>
+        <h4>TypeScript</h4>
+        <span>v5.8 · Type-safe</span>
+      </div>
+      <div class="tech-card">
+        <span class="tech-icon">🔥</span>
+        <h4>Firebase</h4>
+        <span>v12 · Firestore + Auth</span>
+      </div>
+      <div class="tech-card">
+        <span class="tech-icon">🤖</span>
+        <h4>Gemini AI</h4>
+        <span>@google/genai SDK</span>
+      </div>
+      <div class="tech-card">
+        <span class="tech-icon">⚡</span>
+        <h4>Vite 6</h4>
+        <span>Build tool · HMR</span>
+      </div>
+      <div class="tech-card">
+        <span class="tech-icon">🚂</span>
+        <h4>Express.js</h4>
+        <span>Backend API server</span>
+      </div>
+      <div class="tech-card">
+        <span class="tech-icon">🎨</span>
+        <h4>Tailwind CSS</h4>
+        <span>v4 · Utility-first</span>
+      </div>
+      <div class="tech-card">
+        <span class="tech-icon">📐</span>
+        <h4>KaTeX</h4>
+        <span>Math rendering</span>
+      </div>
+      <div class="tech-card">
+        <span class="tech-icon">✨</span>
+        <h4>Motion</h4>
+        <span>Animations v12</span>
+      </div>
+      <div class="tech-card">
+        <span class="tech-icon">📄</span>
+        <h4>docx / xlsx</h4>
+        <span>Export Word/Excel</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">⚗️ CHEM10 AI</div>
+  <p class="footer-sub">Nền tảng Ôn tập Hóa học 10 thông minh · Chuẩn GDPT 2018</p>
+  <div class="footer-tags">
+    <span class="footer-tag">React 19</span>
+    <span class="footer-tag">TypeScript</span>
+    <span class="footer-tag">Firebase</span>
+    <span class="footer-tag">Gemini AI</span>
+    <span class="footer-tag">Vite 6</span>
+    <span class="footer-tag">Express.js</span>
+    <span class="footer-tag">Tailwind CSS 4</span>
+    <span class="footer-tag">KaTeX</span>
+  </div>
+  <p class="footer-copy">Built with ❤️ for Vietnamese Chemistry Education · MIT License</p>
+</footer>
+
+<!-- SCROLL TO TOP -->
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+  // Scroll to top button
+  const scrollBtn = document.getElementById('scrollTop');
+  window.addEventListener('scroll', () => {
+    scrollBtn.classList.toggle('visible', window.scrollY > 400);
+  });
+
+  // Copy code blocks on click
+  document.querySelectorAll('pre').forEach(pre => {
+    pre.style.position = 'relative';
+    const btn = document.createElement('button');
+    btn.textContent = 'Copy';
+    btn.className = 'copy-btn';
+    btn.addEventListener('click', () => {
+      navigator.clipboard.writeText(pre.querySelector('code').textContent).then(() => {
+        btn.textContent = '✓ Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 2000);
+      });
+    });
+    pre.appendChild(btn);
+  });
+
+  // Smooth scroll for nav links
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', e => {
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
