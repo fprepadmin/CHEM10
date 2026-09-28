@@ -1,99 +1,99 @@
 <div align="center">
 
-# ⚗️ CHEM10 AI
+<img src="https://readme-typing-svg.demolab.com?font=Inter&weight=700&size=32&pause=1000&color=0EA5E9&center=true&vCenter=true&width=600&lines=CHEM10+AI;N%E1%BB%81n+t%E1%BA%A3ng+%C3%94n+t%E1%BA%ADp+H%C3%B3a+h%E1%BB%8Dc+10" alt="CHEM10 AI" />
 
-### Nền tảng Ôn tập Hóa học 10 thông minh
+<br/>
 
-*Chuẩn chương trình GDPT 2018 · Chấm bài Server-side · Bảo mật đáp án tuyệt đối*
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.8-%233178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-19-%2361DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org/)
+[![Firebase](https://img.shields.io/badge/Firebase-12-%23FFCA28?style=for-the-badge&logo=firebase&logoColor=black)](https://firebase.google.com/)
+[![Vite](https://img.shields.io/badge/Vite-6-%23646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Gemini AI](https://img.shields.io/badge/Gemini-AI-%234285F4?style=for-the-badge&logo=google&logoColor=white)](https://ai.google.dev/)
+[![Groq](https://img.shields.io/badge/Groq-AI-%23F55036?style=for-the-badge&logo=groq&logoColor=white)](https://groq.com/)
 
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.8-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)](https://reactjs.org/)
-[![Firebase](https://img.shields.io/badge/Firebase-12-FFCA28?logo=firebase&logoColor=black)](https://firebase.google.com/)
-[![Gemini AI](https://img.shields.io/badge/Gemini-AI-4285F4?logo=google&logoColor=white)](https://ai.google.dev/)
-[![Vite](https://img.shields.io/badge/Vite-6-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
+<br/>
+
+> Nền tảng ôn tập Hóa học 10 tích hợp trí tuệ nhân tạo · Chuẩn chương trình GDPT 2018  
+> Chấm bài Server-side bảo mật · Phân quyền 3 tầng · Tạo đề tự động bằng AI
 
 </div>
 
 ---
 
-## 🎯 Giới thiệu
+## Giới thiệu
 
-**CHEM10 AI** là nền tảng học tập trực tuyến tích hợp trí tuệ nhân tạo, được thiết kế đặc biệt cho môn Hóa học lớp 10 theo chương trình Giáo dục phổ thông 2018. Hệ thống cung cấp ngân hàng câu hỏi phong phú, tự động tạo đề kiểm tra, và chấm bài bảo mật phía server — đảm bảo đáp án không bao giờ bị lộ ra phía client.
+**CHEM10 AI** là nền tảng học tập trực tuyến dành riêng cho môn Hóa học lớp 10 theo chương trình Giáo dục phổ thông 2018. Hệ thống tích hợp ngân hàng câu hỏi đa dạng, cơ chế tạo đề tự động bằng Gemini AI, và kiến trúc chấm bài Server-side đảm bảo đáp án không bao giờ tiếp cận được phía client.
 
-### ✨ Tính năng nổi bật
+### Tính năng nổi bật
 
 | Tính năng | Mô tả |
-|-----------|-------|
-| 🧪 **Ngân hàng câu hỏi** | 7 chương Hóa 10 GDPT 2018 · Trắc nghiệm, Đúng/Sai, Tự luận ngắn |
-| 🤖 **Tạo đề AI** | Gemini AI tự động sinh câu hỏi theo chương, mức độ và chủ đề |
-| 🔒 **Chấm bài Server-side** | Đáp án chỉ tồn tại trên server — học sinh không thể gian lận |
-| 👥 **Phân quyền 3 tầng** | ADMIN · TEACHER · STUDENT với Firestore Security Rules |
-| 📊 **Báo cáo chi tiết** | Thống kê kết quả, điểm số, phân tích theo từng câu |
-| 📝 **Xuất đề Word/Excel** | Tạo file đề thi và đáp án chuẩn định dạng |
-| 🏫 **Quản lý lớp học** | Tạo lớp, giao bài, theo dõi tiến độ học sinh |
-| ⚡ **Real-time** | Cập nhật kết quả tức thì với Firebase Firestore |
+|:----------|:------|
+| ![bank](https://img.shields.io/badge/-Ngân_hàng_câu_hỏi-0ea5e9?style=flat-square&logoColor=white) | 7 chương Hóa 10 GDPT 2018 — Trắc nghiệm, Đúng/Sai 4 ý, Tự luận ngắn, Tính toán, Cân bằng PTHH |
+| ![ai](https://img.shields.io/badge/-Tạo_đề_bằng_AI-7c3aed?style=flat-square&logoColor=white) | Gemini AI sinh câu hỏi theo chương, mức độ nhận thức và chủ đề tuỳ chỉnh |
+| ![secure](https://img.shields.io/badge/-Chấm_bài_Server--side-16a34a?style=flat-square&logoColor=white) | Đáp án chỉ tồn tại trên server — học sinh không thể gian lận qua network requests |
+| ![rbac](https://img.shields.io/badge/-Phân_quyền_3_tầng-dc2626?style=flat-square&logoColor=white) | ADMIN · TEACHER · STUDENT với Firestore Security Rules nghiêm ngặt |
+| ![report](https://img.shields.io/badge/-Báo_cáo_chi_tiết-0369a1?style=flat-square&logoColor=white) | Thống kê điểm số, phân tích năng lực theo chương và mức độ nhận thức |
+| ![export](https://img.shields.io/badge/-Xuất_Word_/_Excel-166534?style=flat-square&logoColor=white) | Tạo file đề thi `.docx` và bảng điểm `.xlsx` chuẩn định dạng |
+| ![class](https://img.shields.io/badge/-Quản_lý_lớp_học-9333ea?style=flat-square&logoColor=white) | Tạo lớp, giao bài có thời hạn, theo dõi tiến độ từng học sinh |
+| ![realtime](https://img.shields.io/badge/-Real--time_Firestore-f97316?style=flat-square&logoColor=white) | Cập nhật kết quả tức thì, đồng bộ đa thiết bị không cần tải lại trang |
 
 ---
 
-## 🏗️ Kiến trúc hệ thống
+## Kiến trúc hệ thống
 
 ```
-┌─────────────────────────────────────────────────────────┐
-│                    CHEM10 AI SYSTEM                     │
-│                                                         │
-│  ┌──────────────┐    ┌──────────────┐    ┌───────────┐  │
-│  │   React 19   │    │  Express.js  │    │ Firebase  │  │
-│  │  TypeScript  │◄──►│   Server     │◄──►│ Firestore │  │
-│  │  Tailwind 4  │    │  (Port 3000) │    │   Auth    │  │
-│  └──────────────┘    └──────────────┘    └───────────┘  │
-│         │                   │                           │
-│         │            ┌──────┴──────┐                    │
-│         │            │  Gemini AI  │                    │
-│         │            │  (API Key)  │                    │
-│         └────────────┴─────────────┘                    │
-└─────────────────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────────────┐
+│                       CHEM10 AI SYSTEM                       │
+│                                                              │
+│   ┌───────────────┐    ┌────────────────┐    ┌───────────┐   │
+│   │   React 19    │    │   Express.js   │    │ Firebase  │   │
+│   │  TypeScript   │◄──►│    Server      │◄──►│ Firestore │   │
+│   │  Tailwind 4   │    │  (Port 3000)   │    │   Auth    │   │
+│   └───────────────┘    └────────────────┘    └───────────┘   │
+│           │                    │                             │
+│           │             ┌──────┴───────┐                     │
+│           │             │  Gemini AI   │  ← Tạo câu hỏi      │
+│           │             │  Groq AI     │  ← Phân tích HS     │
+│           └─────────────┴──────────────┘                     │
+└──────────────────────────────────────────────────────────────┘
 ```
 
-**Luồng chấm bài bảo mật:**
+**Luồng chấm bài Zero-Exposure:**
 ```
-Student Submit ──► Express Server ──► Firestore answerKeys
-                        │
-                   (So sánh đáp án)
-                        │
-                   ◄── Trả điểm (không trả đáp án)
+[Client] Nộp bài ──► [Express Server] Nhận answers
+                              │
+                    Fetch answerKeys từ Firestore
+                              │
+                    So sánh & tính điểm (server-only)
+                              │
+              ◄── Trả về score + details (KHÔNG trả đáp án)
 ```
 
 ---
 
-## 🚀 Cài đặt & Chạy
+## Yêu cầu hệ thống
 
-### Yêu cầu
+- ![Node](https://img.shields.io/badge/Node.js-%3E%3D18.x-339933?style=flat-square&logo=nodedotjs&logoColor=white)
+- ![npm](https://img.shields.io/badge/npm_hoặc_bun-latest-CB3837?style=flat-square&logo=npm&logoColor=white)
+- Tài khoản [Firebase](https://console.firebase.google.com/) với Firestore và Authentication được kích hoạt
+- [Gemini API Key](https://aistudio.google.com/apikey) — miễn phí tại Google AI Studio
+- [Groq API Key](https://console.groq.com/keys) — miễn phí, dùng cho tính năng phân tích năng lực học sinh
 
-- **Node.js** ≥ 18.x
-- **npm** hoặc **bun**
-- Tài khoản **Firebase** với Firestore enabled
-- **Gemini API Key** từ [Google AI Studio](https://aistudio.google.com/apikey)
+---
+
+## Cài đặt
 
 ### Bước 1 — Clone và cài dependencies
 
 ```bash
 git clone <repo-url>
 cd CHEM10
-
 npm install
-# hoặc
-bun install
 ```
 
 ### Bước 2 — Cấu hình Firebase
 
-Sao chép file cấu hình mẫu và điền thông tin Firebase của bạn:
-
-```bash
-cp firebase-applet-config.json.example firebase-applet-config.json
-```
-
-Chỉnh sửa [`firebase-applet-config.json`](./firebase-applet-config.json):
+Điền thông tin project vào [`firebase-applet-config.json`](./firebase-applet-config.json):
 
 ```json
 {
@@ -107,9 +107,9 @@ Chỉnh sửa [`firebase-applet-config.json`](./firebase-applet-config.json):
 }
 ```
 
-### Bước 3 — Cấu hình biến môi trường
+> Lấy thông tin tại: **Firebase Console** → Project Settings → Your apps → Web app config.
 
-Tạo file `.env.local` từ template:
+### Bước 3 — Cấu hình biến môi trường
 
 ```bash
 cp .env.example .env.local
@@ -118,13 +118,20 @@ cp .env.example .env.local
 Chỉnh sửa `.env.local`:
 
 ```env
-GEMINI_API_KEY=your_gemini_api_key_here
+# Gemini AI — tạo câu hỏi tự động
+GEMINI_API_KEY=your_gemini_api_key
+
+# Groq AI — phân tích năng lực học sinh (nhiều keys cách nhau bởi dấu phẩy)
+VITE_GROQ_API_KEYS=gsk_key1,gsk_key2,gsk_key3
+
+# URL ứng dụng
 APP_URL=http://localhost:3000
 ```
 
 ### Bước 4 — Deploy Firestore Security Rules
 
 ```bash
+npm install -g firebase-tools
 firebase login
 firebase use your-project-id
 firebase deploy --only firestore:rules
@@ -134,92 +141,121 @@ firebase deploy --only firestore:rules
 
 ```bash
 npm run dev
-```
-
-Mở trình duyệt tại: **http://localhost:3000** 🎉
-
----
-
-## 📦 Các lệnh có sẵn
-
-```bash
-npm run dev       # Chạy server development (Vite + Express)
-npm run build     # Build production bundle
-npm run start     # Chạy server production (từ dist/)
-npm run lint      # Kiểm tra lỗi TypeScript
-npm run preview   # Preview build production
-npm run clean     # Xóa thư mục dist/
+# Mở trình duyệt: http://localhost:3000
 ```
 
 ---
 
-## 📁 Cấu trúc thư mục
+## Các lệnh NPM
+
+| Lệnh | Mô tả |
+|:-----|:------|
+| `npm run dev` | Chạy server development — Vite HMR + Express đồng thời |
+| `npm run build` | Build production bundle (Vite + esbuild) |
+| `npm run start` | Chạy server production từ `dist/` |
+| `npm run lint` | Kiểm tra lỗi TypeScript (`tsc --noEmit`) |
+| `npm run preview` | Preview bản build production local |
+| `npm run clean` | Xóa thư mục `dist/` để build sạch |
+
+---
+
+## Cấu trúc thư mục
 
 ```
 CHEM10/
 ├── src/
-│   ├── App.tsx              # Root component, routing
-│   ├── components/          # UI components (Teacher, Student, Admin)
-│   ├── context/             # React Context (Auth, App state)
-│   ├── data/                # Dữ liệu tĩnh (chương trình học)
-│   ├── lib/                 # Firebase, Gemini AI clients
-│   ├── services/            # Firestore services
-│   ├── types/               # TypeScript type definitions
-│   └── utils/               # Helper utilities
-├── server.ts                # Express server (chấm bài, API)
-├── firestore.rules          # Firestore Security Rules
-├── firebase-applet-config.json  # Firebase config (cần điền)
-├── .env.example             # Template biến môi trường
-├── vite.config.ts           # Vite configuration
-├── tsconfig.json            # TypeScript configuration
-└── snapshots/               # Production snapshots backup
+│   ├── App.tsx                    # Root component, routing
+│   ├── components/                # UI components (Teacher, Student, Admin)
+│   ├── context/                   # React Context (Auth, App state)
+│   ├── data/                      # Dữ liệu tĩnh (chương trình học)
+│   ├── lib/                       # Firebase, Gemini AI clients
+│   ├── services/                  # Firestore & AI services
+│   ├── types/                     # TypeScript type definitions
+│   └── utils/                     # Competency analyzer & helpers
+├── server.ts                      # Express server — chấm bài, API endpoints
+├── firestore.rules                # Firestore Security Rules (RBAC 3 tầng)
+├── firebase-applet-config.json    # Firebase config (điền thông tin của bạn)
+├── .env.example                   # Template biến môi trường
+├── vite.config.ts                 # Vite configuration
+├── tsconfig.json                  # TypeScript configuration
+└── snapshots/                     # Production snapshots backup
 ```
 
 ---
 
-## 🔐 Bảo mật
+## Bảo mật
 
-- **Zero Answer-Key Exposure**: Đáp án (`answerKeys` collection) chỉ được đọc bởi server Express — học sinh không bao giờ nhận được đáp án thực
-- **Firestore Rules**: Phân quyền nghiêm ngặt theo role `ADMIN`, `TEACHER`, `STUDENT`
-- **Server-side Grading**: Toàn bộ logic chấm điểm xử lý tại server, kết quả trả về là điểm số (không phải đáp án)
-- **Environment Variables**: API keys không được commit vào git
+[![Security](https://img.shields.io/badge/Zero_Answer--Key_Exposure-VERIFIED-16a34a?style=for-the-badge&logo=checkmarx&logoColor=white)]()
+
+| Lớp bảo mật | Chi tiết |
+|:------------|:---------|
+| **Server-side Grading** | Toàn bộ logic chấm điểm ở server Express — client chỉ nhận điểm số, không nhận đáp án |
+| **Firestore Rules** | Collection `answerKeys` bị deny tuyệt đối với role STUDENT ở mức database |
+| **RBAC 3 tầng** | Quyền hạn được kiểm tra song song tại Firestore Rules và Express middleware |
+| **Environment Secrets** | API keys chỉ tồn tại trong biến môi trường runtime, không commit vào git |
+| **Assignment Validation** | Server xác minh bài giao còn hiệu lực trước khi chấm |
+| **Audit Logging** | Mọi lần chấm bài được ghi log đầy đủ để kiểm tra khi cần |
 
 ---
 
-## 📚 Nội dung chương trình
+## Nội dung chương trình
 
 Hệ thống bao gồm **7 chương** Hóa học 10 chuẩn GDPT 2018:
 
-1. **Chương 1** — Nhập môn Hóa học
-2. **Chương 2** — Nguyên tử
-3. **Chương 3** — Bảng tuần hoàn các nguyên tố hóa học
-4. **Chương 4** — Liên kết hóa học
-5. **Chương 5** — Năng lượng hóa học
-6. **Chương 6** — Tốc độ phản ứng hóa học
-7. **Chương 7** — Nguyên tố nhóm VIIA (Halogen)
+| # | Chương | Nội dung chính |
+|:-:|:-------|:---------------|
+| 1 | Nhập môn Hóa học | Đối tượng nghiên cứu, phương pháp, an toàn thí nghiệm |
+| 2 | Nguyên tử | Thành phần cấu tạo, mô hình nguyên tử, cấu hình electron |
+| 3 | Bảng tuần hoàn | Cấu tạo, xu hướng tuần hoàn, ý nghĩa của bảng HTTH |
+| 4 | Liên kết hóa học | Ion, cộng hóa trị, kim loại, hình học phân tử VSEPR |
+| 5 | Năng lượng hóa học | Nhiệt phản ứng, enthalpy, phương trình nhiệt hóa học |
+| 6 | Tốc độ phản ứng | Biểu thức tốc độ, yếu tố ảnh hưởng, ứng dụng thực tiễn |
+| 7 | Nguyên tố nhóm VIIA | Halogen: F, Cl, Br, I — tính chất vật lý, hóa học và điều chế |
 
 ---
 
-## 🤝 Đóng góp
+## Công nghệ sử dụng
 
-1. Fork repository
-2. Tạo branch mới: `git checkout -b feature/ten-tinh-nang`
-3. Commit changes: `git commit -m 'feat: mô tả tính năng'`
-4. Push: `git push origin feature/ten-tinh-nang`
-5. Tạo Pull Request
+[![React](https://img.shields.io/badge/React_19-Framework-61DAFB?style=flat-square&logo=react&logoColor=black)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript_5.8-Language-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Vite_6-Build_Tool-646CFF?style=flat-square&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Tailwind](https://img.shields.io/badge/Tailwind_CSS_4-Styling-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![Firebase](https://img.shields.io/badge/Firebase_12-Database_%26_Auth-FFCA28?style=flat-square&logo=firebase&logoColor=black)](https://firebase.google.com/)
+[![Express](https://img.shields.io/badge/Express.js-Backend-000000?style=flat-square&logo=express&logoColor=white)](https://expressjs.com/)
+[![Gemini](https://img.shields.io/badge/Gemini_AI-Question_Gen-4285F4?style=flat-square&logo=google&logoColor=white)](https://ai.google.dev/)
+[![Groq](https://img.shields.io/badge/Groq_AI-Assessment-F55036?style=flat-square&logo=groq&logoColor=white)](https://groq.com/)
+[![KaTeX](https://img.shields.io/badge/KaTeX-Math_Render-008080?style=flat-square&logo=latex&logoColor=white)](https://katex.org/)
+[![Motion](https://img.shields.io/badge/Motion_12-Animations-FF0066?style=flat-square&logo=framer&logoColor=white)](https://motion.dev/)
 
 ---
 
-## 📄 License
+## Đóng góp
 
-MIT License — Xem file [LICENSE](./LICENSE) để biết thêm chi tiết.
+```bash
+# 1. Fork repository và tạo branch
+git checkout -b feature/ten-tinh-nang
+
+# 2. Commit với message rõ ràng
+git commit -m "feat: mô tả tính năng"
+
+# 3. Push và tạo Pull Request
+git push origin feature/ten-tinh-nang
+```
+
+---
+
+## License
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](./LICENSE)
 
 ---
 
 <div align="center">
 
-**CHEM10 AI** · Built with ❤️ for Vietnamese Chemistry Education
+[![Made with](https://img.shields.io/badge/Made_with-TypeScript_%26_React-3178C6?style=for-the-badge&logo=typescript&logoColor=white)]()
 
-*React 19 · TypeScript · Firebase · Gemini AI · Vite*
+**Sản phẩm của cô Nguyễn Tuyền Muội**
+
+*Trường THPT FPT · Môn Hóa học lớp 10 · Chương trình GDPT 2018*
 
 </div>
